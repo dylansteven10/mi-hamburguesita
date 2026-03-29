@@ -1,75 +1,95 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BASE (MOBILE FIRST) ===== */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   background: #fefaf5;
+  color: #222;
   text-align: center;
+  scroll-behavior: smooth;
 }
 
-.nav {
+header {
+  padding: 20px;
   background: #b45f2b;
   color: white;
-  padding: 15px;
 }
 
-.hero {
-  background: url('https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg') no-repeat center/cover;
-  color: white;
-  padding: 80px 20px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 20px;
 }
 
-.container {
-  margin-top: 20px;
+figure {
+  background: #fff;
+  border: 2px solid #ccc;
+  padding: 10px;
 }
 
-/* 👇 IMPORTANTE (1 columna) */
-.card {
-  width: 90%;
-  margin: 10px auto;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-/* imágenes responsive */
-.card img {
+figure img {
   width: 100%;
   height: auto;
 }
 
-/* ===== TABLET (2 columnas) ===== */
-@media all and (min-width: 772px) {
+figcaption {
+  margin-top: 10px;
+}
 
-  .card {
-    width: 45%;
-    display: inline-block;
-    vertical-align: top;
+@media (min-width: 772px) {
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .card img {
-    max-height: 30vh;
-    object-fit: cover;
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  figure:last-child {
+    grid-column: span 2;
   }
 }
 
-/* ===== DESKTOP (3 columnas) ===== */
-@media all and (min-width: 998px) {
+@media (min-width: 992px) {
 
-  .card {
-    width: 30%;
+  figure {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: span 2;
   }
 }
 
-/* ===== FOOTER ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background: #121212;
+    color: #f5d27a;
+  }
+
+  figure {
+    background: #1e1e1e;
+    color: #f5d27a;
+    border: 2px solid black;
+  }
+}
+
 footer {
-  margin-top: 30px;
-  padding: 20px;
+  margin-top: 20px;
+  padding: 15px;
   background: #222;
   color: white;
 }
