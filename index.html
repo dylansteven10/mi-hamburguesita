@@ -4,364 +4,53 @@
   <title>Mi Hamburguesita | Restaurante Gourmet</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Restaurante Mi Hamburguesita - Las mejores hamburguesas artesanales con ingredientes frescos y de calidad. Sabor único en cada bocado.">
-  <!-- Google Fonts + Font Awesome (iconos) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- W3.CSS (última versión) -->
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Librerías -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <style>
-    /* reset + estilos premium */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fefaf5;
-      color: #2c2b28;
-      scroll-behavior: smooth;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-    /* navbar más elegante y sutil */
-    .w3-bar {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
-      backdrop-filter: blur(0px);
-      background: rgba(255,255,245,0.98) !important;
-      transition: all 0.3s ease;
-    }
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #b45f2b;
-      transition: 0.2s;
-    }
-    .nav-logo i {
-      margin-right: 6px;
-      color: #c17b3c;
-    }
-    .w3-bar-item {
-      font-weight: 500;
-      transition: 0.2s;
-      position: relative;
-    }
-    .w3-bar-item:after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 16px;
-      width: 0;
-      height: 2px;
-      background: #b45f2b;
-      transition: 0.3s;
-    }
-    .w3-bar-item:hover:after {
-      width: calc(100% - 32px);
-    }
-    /* header con overlay sutil */
-    .hero-header {
-      position: relative;
-      margin-top: 68px;
-    }
-    .hero-img {
-      filter: brightness(0.92) contrast(1.05);
-      object-fit: cover;
-      width: 100%;
-      max-height: 85vh;
-    }
-    .hero-caption {
-      background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 100%);
-      padding: 1.2rem 2rem;
-      border-radius: 0 8px 8px 0;
-      backdrop-filter: blur(3px);
-      letter-spacing: 3px;
-    }
-    .hero-caption h1 {
-      font-size: 2.8rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-      font-weight: 700;
-    }
-    /* botones y detalles */
-    .btn-gold {
-      background-color: #b45f2b;
-      color: white;
-      transition: all 0.3s;
-      border: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-radius: 40px;
-      padding: 12px 28px;
-    }
-    .btn-gold:hover {
-      background-color: #8e461d;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-    }
-    .w3-tag-brown {
-      background-color: #b45f2b;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    .menu-card-item {
-      border-bottom: 1px dashed #e2dcd5;
-      transition: 0.2s;
-    }
-    .menu-card-item:hover {
-      transform: translateX(6px);
-    }
-    .precio {
-      font-weight: 700;
-      color: #b45f2b;
-      font-family: 'Poppins', monospace;
-      font-size: 1.1rem;
-    }
-    .contact-info i {
-      width: 32px;
-      color: #b45f2b;
-    }
-    footer {
-      background: #1e1e1c;
-      color: #cdc9c2;
-    }
-    footer a {
-      color: #e2aa7a;
-      transition: 0.2s;
-    }
-    footer a:hover {
-      color: #ffce9e;
-    }
-    .w3-input {
-      border-radius: 30px;
-      border: 1px solid #e2cfbc;
-      padding: 14px 18px !important;
-      transition: 0.2s;
-    }
-    .w3-input:focus {
-      border-color: #b45f2b;
-      box-shadow: 0 0 0 3px rgba(180,95,43,0.2);
-      outline: none;
-    }
-    .w3-button-submit {
-      background-color: #2c2b28;
-      color: white;
-      border-radius: 40px;
-      padding: 14px 32px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    .w3-button-submit:hover {
-      background-color: #b45f2b;
-      transform: scale(0.98);
-    }
-    .section-title {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2rem;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 25%;
-      width: 50%;
-      height: 3px;
-      background: #b45f2b;
-      border-radius: 4px;
-    }
-    .rounded-img {
-      border-radius: 28px;
-      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
-      transition: 0.4s;
-    }
-    .rounded-img:hover {
-      transform: scale(1.01);
-    }
-    @media (max-width: 768px) {
-      .hero-caption h1 {
-        font-size: 1.8rem;
-      }
-      .nav-logo {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
 </head>
+
 <body>
 
-<!-- Barra de navegación elegante -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:1px; padding: 12px 24px;">
-    <a href="#home" class="w3-bar-item w3-button nav-logo">
-      <i class="fas fa-hamburger"></i> Mi Hamburguesita
-    </a>
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button"><i class="fas fa-utensils"></i> Nosotros</a>
-      <a href="#menu" class="w3-bar-item w3-button"><i class="fas fa-clipboard-list"></i> Carta</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fas fa-envelope"></i> Reserva</a>
-    </div>
-  </div>
+<!-- NAV -->
+<div class="nav">
+  <h2>🍔 Mi Hamburguesita</h2>
 </div>
 
-<!-- Header principal con imagen premium -->
-<header class="hero-header w3-display-container w3-content w3-wide" style="max-width:1600px;" id="home">
-  <img class="w3-image hero-img" src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Hamburguesa artesanal Mi Hamburguesita" width="1600" height="800" style="width:100%;">
-  <div class="w3-display-bottomleft w3-padding-large w3-margin-bottom hero-caption">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small">Sabor & </span>Pasión <span style="font-weight:300">|</span> Mi Hamburguesita</h1>
-  </div>
+<!-- HERO -->
+<header class="hero">
+  <h1>Las Mejores Hamburguesas</h1>
 </header>
 
-<!-- Contenido principal -->
-<div class="w3-content" style="max-width:1200px; margin-top: 20px;">
+<!-- CONTENIDO -->
+<div class="container">
 
-  <!-- Sección About / Nosotros -->
-  <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-      <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800" class="w3-round rounded-img w3-image" alt="Nuestra parrilla y ambiente" style="width:100%; object-fit: cover; height: auto;">
-    </div>
-
-    <div class="w3-col m6 w3-padding-large">
-      <h1 class="w3-center section-title" style="font-size: 2.5rem;">Nuestra Esencia</h1>
-      <h5 class="w3-center" style="font-family: 'Poppins'; letter-spacing: 2px; color:#b45f2b;">Tradición desde 2010 · Sabor Único</h5>
-      <p class="w3-large" style="line-height:1.7;">En <strong>Mi Hamburguesita</strong> no preparamos simples hamburguesas, creamos experiencias. Con carne de res angus de primera calidad, vegetales frescos de huerta local y pan artesanal horneado cada mañana. Nuestro secreto: la pasión por la parrilla y la mezcla perfecta de especias que conquista hasta el paladar más exigente.</p>
-      <p class="w3-large w3-text-grey">Cada hamburguesa lleva una historia: desde nuestra salsa de la casa "golden sauce" hasta el queso fundido de granja. Disfruta en un ambiente cálido, rústico y con el mejor servicio. ¡Somos más que un restaurante, somos tu lugar favorito!</p>
-      <div class="w3-margin-top">
-        <span class="w3-tag-brown"><i class="fas fa-check-circle"></i> Ingredientes 100% naturales</span>
-        <span class="w3-tag-brown w3-margin-left"><i class="fas fa-fire"></i> Parrilla a la vista</span>
-      </div>
-    </div>
-  </div>
-  
-  <hr class="w3-opacity" style="margin: 0 20px;">
-  
-  <!-- Sección Menú / Estilo Gourmet -->
-  <div class="w3-row w3-padding-64" id="menu">
-    <div class="w3-col l6 w3-padding-large">
-      <h1 class="w3-center section-title" style="font-size: 2.5rem;">Nuestra Carta</h1>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-cheese"></i> La Clásica Angus <span class="precio w3-right">$12.90</span></h4>
-        <p class="w3-text-grey">Res angus 180gr, lechuga fresca, tomate, cebolla morada, pepinillos y nuestra salsa especial. Acompañada de papas rústicas.</p>
-      </div>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-bacon"></i> BBQ Bacon Smash <span class="precio w3-right">$14.50</span></h4>
-        <p class="w3-text-grey">Doble carne smash, queso cheddar ahumado, tocino crujiente, cebolla caramelizada y salsa barbacoa artesanal.</p>
-      </div>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-pepper-hot"></i> Mexicana Picante <span class="precio w3-right">$13.90</span></h4>
-        <p class="w3-text-grey">Carne de res con chorizo, jalapeños, guacamole, queso pepper jack y chipotle mayo. Un toque picante inolvidable.</p>
-      </div>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-seedling"></i> Veggie Portobello <span class="precio w3-right">$11.90</span></h4>
-        <p class="w3-text-grey">Hongo portobello asado, queso de cabra, rúcula, tomates secos y alioli de ajo. Opción fresca y deliciosa.</p>
-      </div>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-french-fries"></i> Papas Trufadas <span class="precio w3-right">$5.90</span></h4>
-        <p class="w3-text-grey">Papas cortadas en casa, aceite de trufa, parmesano y romero fresco.</p>
-      </div>
-      <div class="menu-card-item w3-padding-16">
-        <h4><i class="fas fa-cocktail"></i> Milkshake Artesanal <span class="precio w3-right">$6.50</span></h4>
-        <p class="w3-text-grey">Vainilla, chocolate o frutos rojos. Crema batida y topping casero.</p>
-      </div>
-    </div>
-    
-    <div class="w3-col l6 w3-padding-large">
-      <img src="https://images.pexels.com/photos/3219483/pexels-photo-3219483.jpeg?auto=compress&cs=tinysrgb&w=800" class="w3-round rounded-img w3-image" alt="Hamburguesa Mi Hamburguesita" style="width:100%; object-fit: cover; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);">
-      <div class="w3-margin-top w3-center">
-        <p class="w3-text-grey" style="font-style: italic;"><i class="fas fa-star" style="color:#b45f2b;"></i> * Las hamburguesas incluyen acompañamiento a elección: papas fritas clásicas, ensalada fresca o aros de cebolla.</p>
-      </div>
-    </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg" alt="">
+    <h3>Clásica</h3>
+    <p>Carne, queso, lechuga y tomate</p>
   </div>
 
-  <hr class="w3-opacity">
-
-  <!-- Sección de Especialidades / Destacados extra elegante -->
-  <div class="w3-container w3-padding-32 w3-light-grey w3-round-large" style="margin: 24px 0; border-radius: 36px;">
-    <div class="w3-row-padding">
-      <div class="w3-col l12">
-        <h2 class="w3-center" style="font-family: 'Playfair Display';">🌟 Experiencia Mi Hamburguesita 🌟</h2>
-        <p class="w3-center w3-large">Disfruta de nuestra barra libre de salsas artesanales, ambiente acogedor y música en vivo los fines de semana. ¡Haz de tu comida un momento especial!</p>
-        <div class="w3-center w3-margin-top">
-          <a href="#contact" class="w3-button btn-gold">Reserva tu mesa <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/3219483/pexels-photo-3219483.jpeg" alt="">
+    <h3>BBQ</h3>
+    <p>Con salsa BBQ y tocineta</p>
   </div>
 
-  <!-- Contacto y reservas renovado -->
-  <div class="w3-container w3-padding-64" id="contact">
-    <h1 class="section-title" style="font-size: 2.2rem;">Reservas & Contacto</h1>
-    <div class="w3-row-padding">
-      <div class="w3-col m6">
-        <p class="w3-large">¿Quieres celebrar o simplemente disfrutar la mejor hamburguesa? Escríbenos y confirma tu mesa. También ofrecemos servicio de catering para eventos privados.</p>
-        <div class="contact-info w3-margin-top">
-          <p><i class="fas fa-map-marker-alt"></i> <strong>📍 Dirección:</strong> Av. Gastronómica 742, Ciudad de México, CDMX</p>
-          <p><i class="fas fa-phone-alt"></i> <strong>📞 Teléfono:</strong> +52 55 1234 5678</p>
-          <p><i class="fas fa-envelope"></i> <strong>✉️ Email:</strong> hola@mihamburguesita.com</p>
-          <p><i class="fas fa-clock"></i> <strong>🕒 Horario:</strong> Lun - Dom: 1:00 pm a 11:00 pm (Vie/Sáb hasta 1:00 am)</p>
-        </div>
-        <div class="w3-margin-top">
-          <a href="#" class="w3-button w3-round-xxlarge w3-black" style="background:#2c2b28;"><i class="fab fa-instagram"></i> Síguenos en IG</a>
-          <a href="#" class="w3-button w3-round-xxlarge w3-black w3-margin-left" style="background:#2c2b28;"><i class="fab fa-facebook-f"></i> Facebook</a>
-        </div>
-      </div>
-      <div class="w3-col m6">
-        <form action="#" method="post" onsubmit="alert('¡Gracias por contactarnos! Te responderemos en breve.'); return false;">
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Nombre completo *" required name="Nombre"></p>
-          <p><input class="w3-input w3-padding-16" type="email" placeholder="Correo electrónico *" required name="Email"></p>
-          <p><input class="w3-input w3-padding-16" type="tel" placeholder="Teléfono / WhatsApp"></p>
-          <p><input class="w3-input w3-padding-16" type="number" placeholder="Número de comensales" required name="Personas"></p>
-          <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Fecha y hora" required name="fecha_reserva" value="2025-03-20T20:00"></p>
-          <p><textarea class="w3-input w3-padding-16" rows="2" placeholder="Comentario o preferencias (alergias, ocasión especial)"></textarea></p>
-          <p><button class="w3-button w3-button-submit w3-section w3-block" type="submit"><i class="fas fa-calendar-check"></i> SOLICITAR RESERVA</button></p>
-        </form>
-      </div>
-    </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg" alt="">
+    <h3>Especial</h3>
+    <p>Ingredientes premium</p>
   </div>
-  
-<!-- End page content -->
+
 </div>
 
-<!-- Footer elegante -->
-<footer class="w3-center w3-padding-48" style="background: #1e1e1c; margin-top: 40px;">
-  <div class="w3-content" style="max-width:1100px;">
-    <p class="w3-large" style="font-family: 'Playfair Display';">Restaurante Mi Hamburguesita · Sabor que enamora</p>
-    <p><i class="fas fa-copyright"></i> 2025 | Hecho con <i class="fas fa-heart" style="color:#e2aa7a;"></i> para los amantes de las hamburguesas</p>
-    <p>📍 Disponible para delivery vía Uber Eats & Rappi | Reserva tu mesa con anticipación</p>
-    <p class="w3-small"><a href="#home" style="color:#c28755;">Volver arriba <i class="fas fa-chevron-up"></i></a></p>
-  </div>
+<footer>
+  <p>© 2026 Mi Hamburguesita</p>
 </footer>
 
-<!-- Scroll suave extra y pequeños efectos -->
-<script>
-  // Smooth scroll para enlaces internos
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-  // efecto dinámico navbar cambio de opacidad
-  window.addEventListener('scroll', function() {
-    let nav = document.querySelector('.w3-bar');
-    if(window.scrollY > 80) {
-      nav.style.backgroundColor = '#ffffffdd';
-      nav.style.backdropFilter = 'blur(12px)';
-    } else {
-      nav.style.backgroundColor = 'rgba(255,255,245,0.98)';
-      nav.style.backdropFilter = 'blur(0px)';
-    }
-  });
-</script>
 </body>
 </html>
